@@ -1,17 +1,50 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Card v-for="(card, index) in cards"
+      :key="index"
+      :item="card"
+    >
+      </Card>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Card from './components/Card.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Card,
+    },
+    data: () => {
+      return {
+        cards: [
+        {
+          title: 'How To Take Good Pictures',
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+          img: "/appstore_01.jpg",
+          open: false
+        },
+        {
+          title: 'Cherries Are Delicious',
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+          img: "/appstore_02.jpg",
+          open: false
+        },
+        {
+          title: 'Have You Seen The Movie?',
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+          img: "/appstore_03.jpg",
+          open: false
+        },
+        {
+          title: 'Time For Something New',
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+          img: "/appstore_04.jpg",
+          open: false
+        }
+      ]
+    }
   }
 }
 </script>
